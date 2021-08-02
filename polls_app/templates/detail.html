@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    details | polls_app
+{% endblock title %}
+
+{% block content %}
+<h1> details </h1>
+    <h1>{{ question.question_text }}</h1>
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+        </ul>
+
+{{ key }}
+{% endblock content %}

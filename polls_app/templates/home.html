@@ -6,5 +6,14 @@
 
 {% block content %}
 <h1> Home </h1>
-{{ key }}
+{% if all_questions %}
+    <ul>
+    {% for question in all_questions %}
+        <li><a href="{% url  'polls_app:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
 {% endblock content %}
