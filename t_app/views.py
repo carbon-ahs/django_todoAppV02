@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from .models import 
 from .forms import 
 '''
+app_name = 't_app'
+
 def home(request):
     contex = {
         'key': 'value',
@@ -17,3 +19,13 @@ def about(request):
         'key': 'value',
     }
     return render(request, 'about.html', contex)
+
+def tempu(request):
+    header = 'TEMPU VRUMMMM'
+
+    contex = {
+        'header' : header,
+        'key': 'value',
+        'app_name' : app_name,
+    }
+    return render(request, 'tempu.html', contex)
